@@ -149,5 +149,5 @@ Gateway возвращает `X-Request-Id` и передаёт его по це
 ```powershell
 Select-String -Path .\target\run\*.log -SimpleMatch -Pattern '<UUID брони>'
 ```
-#   h o t e l - b o o k i n g  
+
  
