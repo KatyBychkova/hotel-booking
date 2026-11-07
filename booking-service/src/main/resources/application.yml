@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: booking-service
+  datasource:
+    url: jdbc:h2:mem:bookings;DB_CLOSE_DELAY=-1
+    username: sa
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+logging:
+  structured:
+    format:
+      console: logstash
+app:
+  jwt-secret: ${JWT_SECRET}
+  admin-password: ${ADMIN_PASSWORD}
+  hotel-url: http://hotel-service
+  connect-timeout: 1s
+  read-timeout: 2s
+  retry-delay: 150ms
